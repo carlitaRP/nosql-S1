@@ -4,9 +4,9 @@ import pandas as pd
 @st.cache_data
 def cargar_datos(n_filmes=1000):
     try:
-        df = pd.read_csv("movies.csv", encoding="utf-8", nrows=n_filmes)
+        df = pd.read_csv("netflix/movies.csv", encoding="utf-8", nrows=n_filmes)
     except UnicodeDecodeError:
-        df = pd.read_csv("movies.csv", encoding="latin1", nrows=n_filmes)  # Alternativa en caso de error
+        df = pd.read_csv("netflix/movies.csv", encoding="latin1", nrows=n_filmes)  # Alternativa en caso de error
     return df
 
 movies_df = cargar_datos()
@@ -16,7 +16,7 @@ st.write("🎬 **Encuentra y filtra tus películas favoritas de Netflix!**")
 
 sidebar = st.sidebar
 sidebar.markdown("<h2 style='text-align: center; color: #A32CC4;'>🌸 Carlitarp</h2>", unsafe_allow_html=True)
-sidebar.image('carlita.jpg', width=160)
+st.sidebar.image("https://raw.githubusercontent.com/carlitaRP/nosql-S1/master/netflix/carlita.jpg", width=160)
 sidebar.markdown("<h4 style='text-align: center; color: #A32CC4;'>💜 S20006731 ISW</h4>", unsafe_allow_html=True)
 st.sidebar.markdown("### 📩 Contacto")
 st.sidebar.markdown("[✉️ zS20006731@estudiantes.uv.mx](mailto:zS20006731@estudiantes.uv.mx)")
