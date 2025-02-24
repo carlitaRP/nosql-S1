@@ -5,9 +5,9 @@ import matplotlib.pyplot as plt
 @st.cache_data
 def cargar_datos(n_registros=1000):
     try:
-        df = pd.read_csv("citibike.csv", encoding="utf-8", nrows=n_registros)
+        df = pd.read_csv("bike/citibike.csv", encoding="utf-8", nrows=n_registros)
     except UnicodeDecodeError:
-        df = pd.read_csv("citibike.csv", encoding="latin1", nrows=n_registros)
+        df = pd.read_csv("bike/citibike.csv", encoding="latin1", nrows=n_registros)
     
     df.rename(columns={"start_lat": "lat", "start_lng": "lon"}, inplace=True)
     df["started_at"] = pd.to_datetime(df["started_at"], errors="coerce")
@@ -20,7 +20,7 @@ st.title("💜 Análisis de recorridos en bicicleta 🚲")
 
 sidebar = st.sidebar
 sidebar.markdown("<h2 style='text-align: center; color: #A32CC4;'>🌸 Carlitarp</h2>", unsafe_allow_html=True)
-sidebar.image('carlita.jpg', width=160)
+st.sidebar.image("https://raw.githubusercontent.com/carlitaRP/nosql-S1/master/bike/carlita.jpg", width=160)
 sidebar.markdown("<h4 style='text-align: center; color: #A32CC4;'>💜 S20006731 ISW</h4>", unsafe_allow_html=True)
 st.sidebar.markdown("### 📩 Contacto")
 st.sidebar.markdown("[✉️ zS20006731@estudiantes.uv.mx](mailto:zS20006731@estudiantes.uv.mx)")
