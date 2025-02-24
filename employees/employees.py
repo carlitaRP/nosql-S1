@@ -6,7 +6,7 @@ import seaborn as sns
 # Cargar los datos con cache
 @st.cache_data
 def cargar_datos(n_registros=500):
-    df = pd.read_csv("Employees.csv", nrows=n_registros)
+    df = pd.read_csv("employees/Employees.csv", nrows=n_registros)
     return df
 
 employees = cargar_datos()
@@ -20,7 +20,7 @@ Esta aplicación permite analizar datos de empleados mediante filtros, gráficos
 
 sidebar = st.sidebar
 sidebar.markdown("<h2 style='text-align: center; color: #A32CC4;'>🌸 Carlitarp</h2>", unsafe_allow_html=True)
-sidebar.image('carlita.jpg', width=160)
+st.sidebar.image("https://raw.githubusercontent.com/carlitaRP/nosql-S1/master/employees/carlita.jpg", width=160)
 sidebar.markdown("<h4 style='text-align: center; color: #A32CC4;'>💜 S20006731 ISW</h4>", unsafe_allow_html=True)
 st.sidebar.markdown("### 📩 Contacto")
 st.sidebar.markdown("[✉️ zS20006731@estudiantes.uv.mx](mailto:zS20006731@estudiantes.uv.mx)")
