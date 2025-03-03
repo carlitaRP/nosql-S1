@@ -5,7 +5,7 @@ import plotly.express as px
 # Cargar datos con caché para optimizar la aplicación
 @st.cache_data
 def cargar_datos(n_mb=39420):
-    df = pd.read_csv("all_bike.csv", encoding="utf-8", nrows=n_mb)
+    df = pd.read_csv("motorbike/all_bike.csv", encoding="utf-8", nrows=n_mb)
     return df
 
 # Cargar datos
@@ -14,7 +14,7 @@ motob_df = cargar_datos()
 # Sidebar con información personal
 sidebar = st.sidebar
 sidebar.markdown("<h2 style='text-align: center; color: #FF4C4C;'>🌼Carlitarp🌼</h2>", unsafe_allow_html=True)
-sidebar.image('carlita.jpg', width=160)
+sidebar.image('motorbike/carlita.jpg', width=160)
 sidebar.markdown("<h4 style='text-align: center; color: #CCCCCC;'>🧡S20006731 ISW🧡</h4>", unsafe_allow_html=True)
 sidebar.markdown("### 📩 Contacto")
 sidebar.markdown("[✉️ zS20006731@estudiantes.uv.mx](mailto:zS20006731@estudiantes.uv.mx)")
